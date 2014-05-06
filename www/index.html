@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controller.js"></script>
+  </head>
+  <body ng-app="starter" ng-controller="MainCtrl">
+<!--
+  <body ng-app="starter">
+-->
+    <ion-pane>
+		<ion-header-bar class="bar-assertive">
+			<h1 class="title">InilahKoran RSS Reader</h1>
+
+			<button class="button button-icon icon ion-refresh" ng-click="reloadPage()"></button>
+		</ion-header-bar>
+		<ion-content>
+
+			<ul>
+    	<div class="list card">
+ 			<li ng-repeat="item in feed.items"> 
+ 			
+ 				<div class="item item-avatar item-text-wrap">
+	 				<img src="{{item.img}}"  />
+	 				<h2><a href="{{item.link}}" target="_blank" >{{item.title}}</a> </h2>
+	 				<p>{{item.pubDate}}
+	 				</p>
+	 			</div>
+
+	 			<div class="item item-body">
+	 				<p>{{item.description }}</p>
+ 				</div>
+ 			</li>
+ 		</div>
+ 		</ul>   
+		</ion-content>
+		<ion-footer-bar class="bar bar-assertive">
+				<button class="button button-icon icon ion-help-circled pull-right " 
+				onclick="alert('Just RSS reader for InilahKoran.com.\n\nThis app is alpha version.\nby: hahn','iKor')"></button>
+
+		</ion-footer-bar>
+    </ion-pane>
+  </body>
+  
+</html>
